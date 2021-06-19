@@ -33,6 +33,9 @@ const createStore = () =>{
             signInWithEmailPassword({commit},payload){
                 return auth.signInWithEmailAndPassword(payload.email,payload.password)
             },
+            signUpEmailAndPassword({commit},payload){
+                return auth.createUserWithEmailAndPassword(payload.email,payload.password)
+            },
             signOut({commit}){
                 auth.signOut().then(()=>{
                     commit('setEverything',null)

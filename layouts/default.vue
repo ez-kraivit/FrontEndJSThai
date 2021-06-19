@@ -17,12 +17,19 @@
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-list-item link v-if="!!token" v-on:click="connectLogout">
+          <v-list-item-icon>
+            <v-icon>mdi-home</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Logout</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
       <v-toolbar-title>Application</v-toolbar-title>
     </v-app-bar>
 
@@ -33,6 +40,7 @@
 </template>
 
 <script>
+import {mapState} from 'vuex';
 export default {
   data() {
     return {
@@ -43,6 +51,14 @@ export default {
         { title: "Profile", icon: "mdi-face-profile", link: "profile" },
       ],
     };
+  },
+  computed:{
+    ...mapState(['token'])
+  },
+  methods: {
+    connectLogout(){
+      this.$store.dispatch("signOut");
+    }
   },
 };
 </script>
