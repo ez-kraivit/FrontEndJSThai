@@ -28,6 +28,10 @@ coverage
 # Bower dependency directory (https://bower.io/)
 bower_components
 
+
+.firebaserc
+firebase.json
+
 # node-waf configuration
 .lock-wscript
 

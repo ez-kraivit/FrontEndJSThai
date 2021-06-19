@@ -31,7 +31,7 @@ const createStore = () =>{
         },
         actions: {
             signInWithEmailPassword({commit},payload){
-                return auth.signInWithEmailPassword(payload.email,payload.password)
+                return auth.signInWithEmailAndPassword(payload.email,payload.password)
             },
             signOut({commit}){
                 auth.signOut().then(()=>{
