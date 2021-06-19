@@ -35,13 +35,16 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    '~/plugins/fireauth.js'
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/dotenv',
     // https://go.nuxtjs.dev/eslint
     // '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
@@ -54,7 +57,15 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa'
   ],
-
+  env:{
+    "apiKey": process.env.API_KEY,
+    "appId": process.env.APP_ID,
+    "authDomain": process.env.AUTH_DOMAIN,
+    "databaseURL": process.env.DATABASE_URL,
+    "messagingSenderId": process.env.MESSAGEING_SENDERID,
+    "projectId": process.env.PROJECT_ID,
+    "storageBucket": process.env.STORAGE_BUCKET,
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
