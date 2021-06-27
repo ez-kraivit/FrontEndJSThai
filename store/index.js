@@ -7,6 +7,7 @@ const createStore = () =>{
             user:null,
             uid:null,
             email:null,
+            role:2,
             token:null
         }),
         mutations: {

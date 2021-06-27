@@ -48,6 +48,7 @@ export default {
       menus: [
         { title: "Home", icon: "mdi-home-roof", link: "/" },
         { title: "About", icon: "mdi-paper-roll", link: "about" },
+        { title: "Login", icon: "mdi-login", link: "login" },
         { title: "Profile", icon: "mdi-face-profile", link: "profile" },
       ],
     };
